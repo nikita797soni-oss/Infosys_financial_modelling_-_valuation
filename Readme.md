@@ -11,7 +11,7 @@ This repository houses a full-stack financial model, regression-based forecastin
 
 ---
 
-## 📌 Executive Valuation Summary
+## Executive Valuation Summary
 
 *Valuation Date: November 13, 2026 | Currency: INR (₹) in Crores, except per-share data*
 
@@ -28,7 +28,7 @@ This repository houses a full-stack financial model, regression-based forecastin
 
 ---
 
-## 🗂️ Repository Architecture
+## Repository Architecture
 
 ```text
 ├── Infosys_FM&V.xlsx                                      # Dynamic, formula-driven 3-statement & valuation Excel workbook
@@ -40,7 +40,7 @@ This repository houses a full-stack financial model, regression-based forecastin
 
 ---
 
-## ⚙️ Financial Modelling & Valuation Methodology
+## Financial Modelling & Valuation Methodology
 
 The Excel workbook (`Infosys_FM&V.xlsx`) is engineered with dynamic cell referencing, clear separation of hardcoded inputs and calculated outputs, and institutional valuation conventions:
 
@@ -67,15 +67,15 @@ The Excel workbook (`Infosys_FM&V.xlsx`) is engineered with dynamic cell referen
 
 ---
 
-## 🔍 Executive Takeaways (Preview)
+## Executive Takeaways (Preview)
 
 * **Why DCF and Comps Disagree:** The DCF penalizes Infosys for near-term top-line deceleration ($1\%–2\%$ FY27 guidance) and capitalizes cash flows at a $12.87\%$ discount rate, whereas peer multiples are inflated by high-growth mid-caps (Persistent Systems at `39.4x` EV/EBITDA; Coforge at `30.6x`). Even against pure-play Tier-1 peers (TCS `11.7x`, HCLTech `14.0x`, Wipro `10.7x`), Infosys at `9.2x` screens attractively valued.
 * **The ROE Paradox:** Despite a $180\text{ bps}$ contraction in net profit margin since FY20, ROE climbed $+576\text{ bps}$ to **$31.21\%$**, engineered through superior asset turnover ($1.03\text{x} \rightarrow 1.18\text{x}$) and non-interest-bearing operating leverage (equity multiplier $1.35\text{x} \rightarrow 1.60\text{x}$).
 
-📄 **Read the full analytical memo and model critique in [`KEY_INSIGHTS.md`](./KEY_INSIGHTS.md).**
+ **Read the full analytical memo and model critique in [`KEY_INSIGHTS.md`](./KEY_INSIGHTS.md).**
 
 ---
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 *This financial model and accompanying research documentation were developed strictly for educational and portfolio demonstration purposes. They do not constitute investment advice, a solicitation, or a recommendation to buy or sell any security. Consult a SEBI-registered investment advisor before making financial decisions.*
