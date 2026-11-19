@@ -11,71 +11,62 @@ This repository houses a full-stack financial model, regression-based forecastin
 
 ---
 
-## Executive Valuation Summary
+Executive Thesis
 
-*Valuation Date: November 13, 2026 | Currency: INR (₹) in Crores, except per-share data*
+At a reference price of ₹1,151, Infosys shows a clear gap between intrinsic and relative value. The base-case DCF gives ₹918.48 per share (price is 1.25x the DCF value) because the model capitalises cash flows at a 12.87% WACC and near-term growth is moderating (FY27 guidance is 1% to 2% in constant currency). At the same time the stock trades at a discount to Indian IT peers (9.2x EV/EBITDA and 15.0x P/E against peer medians of 16.1x and 23.4x), which implies ₹1,326 to ₹1,974 per share on a relative basis.
 
-| Valuation & Financial Metric | Figure | Analytical Context & Benchmark |
-| :--- | :--- | :--- |
-| **Reference Market Price (CMP)** | **₹1,151.00** | 52-Week Range: ₹980.40 – ₹1,728.00 |
-| **Intrinsic Value (Base DCF)** | **₹918.48** | Implies **$-20.2\%$ downside** ($\text{WACC} = 12.87\%$, $g = 4.00\%$) |
-| **DCF Scenario Range (Bear – Bull)** | **₹665.54 – ₹1,673.38** | WACC sensitivity ($11.00\%–18.00\%$) & terminal $g$ ($3.00\%–7.00\%$) |
-| **Relative Valuation (Comps Median)** | **₹1,326.00 – ₹1,974.00** | Implies **$+15.2\%$ to $+71.5\%$ upside** across `EV/Rev`, `P/E`, `EV/EBITDA` |
-| **FY26 Revenue & 10-Yr CAGR** | **₹178,650 Cr** | $+9.61\%$ YoY growth; $11.2\%$ CAGR (FY17–FY26) |
-| **FY26 Free Cash Flow (FCF)** | **₹31,259 Cr** | $106.2\%$ FCF-to-Net-Profit conversion; ₹18,656 Cr dividends paid |
-| **FY26 Return on Equity (ROE)** | **$31.21\%$** | Expanded $+576\text{ bps}$ since FY20 despite gross margin compression |
-| **Net Cash Position (FY26)** | **₹13,676 Cr** | ₹22,201 Cr cash & bank vs. ₹9,176 Cr lease liabilities (zero bank debt) |
+Executive Valuation Summary
+Metric	Figure	Context
+Reference market price	₹1,151.00	52-week range ₹980.40 to ₹1,728.00
+Intrinsic value (base DCF)	₹918.48	20.2% below the market price (WACC 12.87%, terminal growth 4.00%)
+DCF scenario range	₹665.54 to ₹1,673.38	WACC 11% to 18%, terminal growth 3% to 7%
+Relative valuation (peer medians)	₹1,326 to ₹1,974	+15.2% to +71.5% versus price, across EV/Revenue, P/E and EV/EBITDA
+FY26 revenue	₹178,650 cr	+9.61% year on year; 11.2% CAGR over nine years (FY17 to FY26)
+FY26 free cash flow	₹31,259 cr	106.2% of net profit; ₹18,656 cr paid as dividends
+FY26 return on equity	31.21%	Up 576 bps since FY20 despite lower gross and net margins
+Net cash (Mar-26)	₹13,025 cr	₹22,201 cr cash and bank less ₹9,176 cr lease liabilities; no bank debt. The comps sheet uses ₹13,676 cr.
+Repository Contents
+Infosys_FM_and_V.xlsx                                  Excel workbook: statements, forecasts, WACC, DCF, comps, DuPont
+Infosys_FM_and_V.pdf                                   Printable copy of all workbook schedules
+Report_Infosys_Financial_Modelling_DCF_Valuation.pdf   21-page financial modelling and valuation report
+Infosys_Equity_Research_Report.pdf                     18-page equity research report (rating, target price, thesis)
+KEY_INSIGHTS.md                                        Investment memo: DCF versus comps, DuPont, model critique
+README.md                                              This file
+Methodology
+1. Historical analysis and common-size diagnostics (FY17 to FY26)
+Ten-year income statement, balance sheet and cash flow schedules built from NSE and Screener data.
+Common-size and trend analysis to isolate structural margin shifts, notably a 665 bps fall in gross margin (34.86% to 28.21%) as other manufacturing (subcontracting) costs rose from 9.8% to 18.4% of sales.
+2. Forecasting
+Ordinary least squares regression of sales (FY15 to FY26, n = 12) on a year index: R² = 96.39%, F-statistic = 267.09, p = 1.53 x 10^-8.
+Linear-trend projections of operating EBITDA and EPS (see Known Limitations).
+3. Cost of capital (WACC = 12.87%)
+Beta: two years of daily NSE closing returns against the Nifty 50 (n = 496) give a raw beta of 0.90 and a Blume-adjusted beta of 0.92 (R² = 17.67%). Because single-stock betas are noisy, the model uses the peer-median unlevered beta of 0.74 (TCS, HCLTech, Wipro, Tech Mahindra), relevered at a target D/E of 3.68% to 0.76.
+Cost of equity (CAPM): 13.22% (risk-free rate 7.21%, equity risk premium 7.94%, beta 0.76).
+Cost of debt: 4.88% pre-tax, 3.42% after tax, at a 3.55% target debt weight.
+4. Intrinsic growth and FCFF DCF
+Sustainable growth estimated as reinvestment rate x ROIC, using four-year medians (26.20% reinvestment rate; 9.50% explicit EBIT growth).
+Five explicit years of free cash flow to the firm (FY27E to FY31E), mid-year discounting, Gordon Growth terminal value (4.00%) and a 20-cell sensitivity grid. About 70% of operating value comes from the terminal value.
+5. Relative valuation, football field and DuPont
+Trading comparables against nine listed Indian IT services companies on EV/Revenue, EV/EBITDA and P/E.
+Football field combining DCF scenarios, peer-multiple values and the 52-week range.
+Three-step DuPont decomposition of ROE (31.21%) and ROA (19.49%) over FY20 to FY26.
+Key Takeaways
+Why DCF and comps disagree: the DCF uses a high 12.87% discount rate and moderating growth, while the full peer median is lifted by high-growth mid-caps (Persistent Systems 39.4x EV/EBITDA, Coforge 30.6x). Against large-cap peers (TCS 11.7x, HCLTech 14.0x, Wipro 10.7x), Infosys at 9.2x still screens inexpensive.
+The ROE paradox: net profit margin fell about 180 bps since FY20 (18.28% to 16.48%), yet ROE rose 576 bps, driven by asset turnover (1.03x to 1.18x) and a higher equity multiplier (1.35x to 1.60x) from non-interest-bearing operating liabilities and leases.
 
----
+See KEY_INSIGHTS.md for the full memo.
 
-## Repository Architecture
+Known Limitations
+The explicit-period EBIT growth of 9.5% is above near-term guidance of 1% to 2% constant currency; it is supported in rupee terms by currency depreciation, so the DCF should not be read as conservative.
+The terminal-year cash flow is grown at the explicit-period rate rather than the 4% terminal rate; correcting this lowers the DCF value by about ₹30 per share.
+Base EBIT appears to include other income while cash is also added in the equity bridge.
+The reinvestment rate and intrinsic growth inputs come from a volatile four-year series (-9% to +18%) and depend on EBIT figures that are being refreshed.
+Operating EBITDA and EPS projections depend on an income-statement series that is being corrected for FY17 to FY25.
+Tax is 30% in the WACC and 25% in the DCF; peer statistics include Infosys itself; reference prices differ across sheets (₹1,142 to ₹1,181) because of capture dates.
+Data Sources
 
-```text
-├── Infosys_FM&V.xlsx                                      # Dynamic, formula-driven 3-statement & valuation Excel workbook
-├── Report_Infosys_Financial_Modelling_DCF_Valuation.pdf   # 21-page institutional equity research report with visual analytics
-├── Infosys_FM&V.pdf                                       # Complete printable audit trail of all Excel model schedules
-├── KEY_INSIGHTS.md                                        # Deep-dive investment memo: DCF vs. Comps, DuPont & Risk Critique
-└── README.md                                              # Project documentation & methodological framework
-```
+Screener (financial statements, sales history, peer market data), NSE (daily prices, Nifty 50 returns), company filings and press releases, and the author's Excel model.
 
----
+Disclaimer
 
-## Financial Modelling & Valuation Methodology
-
-The Excel workbook (`Infosys_FM&V.xlsx`) is engineered with dynamic cell referencing, clear separation of hardcoded inputs and calculated outputs, and institutional valuation conventions:
-
-### 1. Historical Normalization & Common-Size Diagnostics (`FY17–FY26`)
-* Reconstructed 10-year Income Statement, Balance Sheet, and Cash Flow schedules from NSE/Screener filings.
-* Conducted vertical (common-size) and horizontal trend analyses to isolate structural margin shifts—specifically tracking the $670\text{ bps}$ gross margin compression ($34.86\% \rightarrow 28.21\%$) caused by rising pass-through/subcontracting costs.
-
-### 2. Econometric Forecasting (`FY27E–FY32E`)
-* Built Ordinary Least Squares (OLS) linear regression models regressing historical revenue (`FY15–FY26`, $n=12$) against time-series weights ($R^2 = 96.39\%$, $F\text{-stat} = 267.09$, $p = 1.53 \times 10^{-8}$) alongside operating EBITDA and EPS trend projections.
-
-### 3. Cost of Capital (`WACC = 12.87%`)
-* **Beta Estimation & De-leveraging:** Regressed 2 years of daily NSE closing returns ($n = 496$) against the Nifty 50 ($\beta_{\text{raw}} = 0.90$, Blume-adjusted $\beta = 0.92$). To eliminate single-stock estimation noise ($R^2 = 17.67\%$), unlevered 5-year monthly betas across Tier-1 Indian IT peers (TCS, HCLTech, Wipro, Tech Mahindra) to derive a peer-median unlevered beta of **$0.74$**, relevered at a target $D/E$ of $3.68\%$ to **$0.76$**.
-* **CAPM Cost of Equity ($K_e$):** $7.21\%\text{ (10-Yr GoI Yield)} + 0.76 \times 7.94\%\text{ (26-Yr Nifty ERP)} = \mathbf{13.22\%}$.
-* **After-Tax Cost of Debt ($K_d$):** $4.88\%\text{ pre-tax} \times (1 - 0.30) = \mathbf{3.42\%}$, weighted at $3.55\%$ target debt-to-capital.
-
-### 4. Intrinsic Growth & FCFF Discounted Cash Flow (`DCF`)
-* **Reinvestment-Driven Growth:** Computed sustainable operating growth via $g = \text{Reinvestment Rate} \times \text{ROIC}$, utilizing 4-year medians ($26.20\%$ reinvestment rate; $9.50\%$ explicit EBIT growth) to smooth working capital volatility.
-* **Discounting & Terminal Value:** Projected 5-year explicit Unlevered Free Cash Flows (`FY27E–FY31E`) discounted via the **mid-year convention**, paired with a Gordon Growth terminal value ($g = 4.00\%$) and a 20-cell two-way sensitivity matrix.
-
-### 5. Relative Valuation, Football Field & DuPont Decomposition
-* **Trading Comps:** Benchmarked Infosys against 9 listed Indian IT services firms across `EV/Revenue`, `EV/EBITDA`, and `P/E` multiples.
-* **Football Field Triangulation:** Synthesized Bear/Base/Bull DCF ranges, peer-multiple implied valuations, and the 52-week trading band.
-* **3-Step DuPont Analysis:** Decomposed ROE ($31.21\%$) and ROA ($19.49\%$) across `FY20–FY26` to separate operational profitability from asset velocity and non-financial operating leverage.
-
----
-
-## Executive Takeaways (Preview)
-
-* **Why DCF and Comps Disagree:** The DCF penalizes Infosys for near-term top-line deceleration ($1\%–2\%$ FY27 guidance) and capitalizes cash flows at a $12.87\%$ discount rate, whereas peer multiples are inflated by high-growth mid-caps (Persistent Systems at `39.4x` EV/EBITDA; Coforge at `30.6x`). Even against pure-play Tier-1 peers (TCS `11.7x`, HCLTech `14.0x`, Wipro `10.7x`), Infosys at `9.2x` screens attractively valued.
-* **The ROE Paradox:** Despite a $180\text{ bps}$ contraction in net profit margin since FY20, ROE climbed $+576\text{ bps}$ to **$31.21\%$**, engineered through superior asset turnover ($1.03\text{x} \rightarrow 1.18\text{x}$) and non-interest-bearing operating leverage (equity multiplier $1.35\text{x} \rightarrow 1.60\text{x}$).
-
- **Read the full analytical memo and model critique in [`KEY_INSIGHTS.md`](./KEY_INSIGHTS.md).**
-
----
-
-## Disclaimer
-
-*This financial model and accompanying research documentation were developed strictly for educational and portfolio demonstration purposes. They do not constitute investment advice, a solicitation, or a recommendation to buy or sell any security. Consult a SEBI-registered investment advisor before making financial decisions.*
+This model and the accompanying research were developed strictly for educational and portfolio demonstration purposes. They do not constitute investment advice, a solicitation, or a recommendation to buy or sell any security. Consult a SEBI-registered investment adviser before making financial decisions.
